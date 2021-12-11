@@ -15,7 +15,7 @@ export const Counter = () => {
       <button className='btn btn-secondary btn-sm'>Increment</button>
       <ul>
         {state.fruit.map((fruit) => (
-          <li>{fruit}</li>
+          <li key={fruit}>{fruit}</li>
         ))}
       </ul>
     </>
