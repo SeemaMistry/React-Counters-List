@@ -3,7 +3,6 @@ import React from 'react';
 export const Counter = () => {
   const state = {
     count: 0,
-    fruit: ['apples', 'bananas', 'cherry'],
   };
   // render the counter-object count and add an increment button next to it
   // set styling using bootstrap
@@ -11,18 +10,18 @@ export const Counter = () => {
   // for btns, render styling conditionally - if count > 0 or not add warning or primary badge
   return (
     <>
-      <span className={getBtnColour()}>{state.count}</span>
+      <span className={getBtnColour()}> {getCount()} </span>
       <button className='btn btn-secondary btn-sm'>Increment</button>
-      <ul>
-        {state.fruit.map((fruit) => (
-          <li key={fruit}>{fruit}</li>
-        ))}
-      </ul>
+      <br></br>
     </>
   );
 
   function getBtnColour() {
     let classes = 'badge m-2 badge-';
     return (classes += state.count === 0 ? 'warning' : 'primary');
+  }
+
+  function getCount() {
+    return state.count === 0 ? 'Zero' : state.count;
   }
 };
